@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+}
+:root{
+    --red:rgb(189, 22, 39) ;
+    --green: rgb(33, 155, 6);
+    --liteGreen:rgb(153, 227, 112);
+}
+
+
+/* NavBar */
+.navBarContainer{
+    background-color: var(--liteGreen);
+    padding: 15px 20px;
+    font-size: 25px;
+}
+.navBar{
+    letter-spacing: 3px;
+}
+.navBarCounter{
+    margin: 20px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+/* Shopping Cart */
+.shoppingCartContainer{
+    display: inline-block;
+    padding: 20px 0 0 50px;
+}
+
+
+/* Items Container */
+.itemsContainer{
+    display: grid;
+    grid-template-columns: auto 50px auto auto auto ;
+    grid-gap: 20px;
+}
+.item{
+    display: flex;
+    align-items: center;
+}
+.count{
+    background-color: var(--green);
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+
+/* Buttons */
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.reset,.delete,.increment,.decrement{
+    background-color: var(--red);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0px;
+}
+.reset{
+    margin: 8px 10px 8px 0;
+}
+.increment{
+    background-color: var(--green);
+}
+button:hover{
+    box-shadow:0px 0px 5px 3px var(--liteGreen);
+}
+
+/* Total */
+.totalContainer{
+    display: inline-block;
+    margin: 15px 0;
+    font-size: 25px;
+}
+.totalCount{
+    padding: 0px 10px;
+    color: white;
+    border-radius: 10px;
+    margin: 15px;
+}
