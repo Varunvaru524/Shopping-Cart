@@ -31,7 +31,7 @@ export default class ShoppingCart extends Component {
 
   handlingIncrement(currentElement){
     let updated = this.state.itemsData.map((element,i)=>{
-      if (element == currentElement) {
+      if (element === currentElement) {
         element.itemCount++;
         return element
       }
@@ -42,7 +42,7 @@ export default class ShoppingCart extends Component {
 
   handlingDecrement(currentElement){
     let updated = this.state.itemsData.map((e,i)=>{
-      if (e == currentElement) {
+      if (e === currentElement) {
         e.itemCount--;
         if (e.itemCount<=0) {
           return e.itemCount = 0
@@ -55,7 +55,7 @@ export default class ShoppingCart extends Component {
   }
 
   handlingDelete(currentElement){
-    let updated = this.state.itemsData.filter(e=>e != currentElement)
+    let updated = this.state.itemsData.filter(e=>e !== currentElement)
     this.setState({itemsData:updated})
   }
 
@@ -70,26 +70,26 @@ export default class ShoppingCart extends Component {
       <React.Fragment>
         <div className="navBarContainer">
           <span className="navBar">Navbar</span>
-            <span style={{backgroundColor:(this.navBarCounter()==0)?'rgb(189, 22, 39)':'rgb(33, 155, 6)'}} className="navBarCounter">{this.navBarCounter()}</span>
+            <span style={{backgroundColor:(this.navBarCounter()===0)?'rgb(189, 22, 39)':'rgb(33, 155, 6)'}} className="navBarCounter">{this.navBarCounter()}</span>
         </div>
 
         <div className="shoppingCartContainer">
-          <button className="reset" style={{backgroundColor:(this.navBarCounter()==0)?'rgb(236, 119, 131)':'rgb(189, 22, 39)',boxShadow:(this.navBarCounter()==0)&&'none'}} onClick={()=>this.handlingReset()}>Reset</button>
+          <button className="reset" style={{backgroundColor:(this.navBarCounter()===0)?'rgb(236, 119, 131)':'rgb(189, 22, 39)',boxShadow:(this.navBarCounter()===0)&&'none'}} onClick={()=>this.handlingReset()}>Reset</button>
           
             {this.state.itemsData.map((element, index) => {
               return (
               <div className="itemsContainer" key={index}>
                 <span className="item">{element.itemName}</span>
-                <span style={{backgroundColor:(element.itemCount==0)?'rgb(189, 22, 39)':'rgb(33, 155, 6)'}} className="count">{this.handlingCount(element)}</span>
+                <span style={{backgroundColor:(element.itemCount===0)?'rgb(189, 22, 39)':'rgb(33, 155, 6)'}} className="count">{this.handlingCount(element)}</span>
                 <button className="increment" onClick={()=>this.handlingIncrement(element)}>+</button>
-                <button style={{backgroundColor:(element.itemCount==0)?'rgb(236, 119, 131)':'rgb(189, 22, 39)',boxShadow:(element.itemCount==0)&&'none'}} className="decrement" onClick={()=>this.handlingDecrement(element)}>-</button>
+                <button style={{backgroundColor:(element.itemCount===0)?'rgb(236, 119, 131)':'rgb(189, 22, 39)',boxShadow:(element.itemCount===0)&&'none'}} className="decrement" onClick={()=>this.handlingDecrement(element)}>-</button>
                 <button className="delete" onClick={()=>this.handlingDelete(element)}>Delete</button>
               </div>
             )})}
 
           <div className="totalContainer">
             <span className="total">Total</span>
-            <span style={{backgroundColor:(this.navBarCounter()==0)?'rgb(189, 22, 39)':'rgb(33, 155, 6)'}} className="totalCount">{this.totalCount()}</span>
+            <span style={{backgroundColor:(this.navBarCounter()===0)?'rgb(189, 22, 39)':'rgb(33, 155, 6)'}} className="totalCount">{this.totalCount()}</span>
           </div>
         </div>
       </React.Fragment>
